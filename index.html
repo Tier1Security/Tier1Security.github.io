@@ -1,207 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-src 'none';">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-src 'none';"
+    />
+    <link rel="icon" href="favicon.png" type="image/png" />
 
-  <title>Portfolio</title>
-  <script>
-    function showMobileMenu() {
-      document.getElementById("page").style.display = "none";
-      document.getElementById("mobileMenu").style.display = "flex";
-    }
+    <title>Ahmed Khan</title>
+    <script>
+      function showMobileMenu() {
+        document.getElementById("page").style.display = "none";
+        document.getElementById("mobileMenu").style.display = "flex";
+      }
 
-    function hideMobileMenu() {
-      document.getElementById("page").style.display = "block";
-      document.getElementById("mobileMenu").style.display = "none";
-    }
-  </script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div>
-    <div id="mobileMenu" style="display: none;">
-      <div>
-        <img src="assets/close.png" class="closeIcon" onclick="hideMobileMenu()">
-      </div>
-      <div>
-        <a href="#Portfolio" onclick="hideMobileMenu()">Portfolio</a>
-      </div>
-      <div>
-        <a href="#Education" onclick="hideMobileMenu()">Education</a>
-      </div>
-      <div>
-        <a href="#Resume" onclick="hideMobileMenu()">Resume</a>
-      </div>
-    </div>
-    <div id="page">
-      <div class="nav">
+      function hideMobileMenu() {
+        document.getElementById("page").style.display = "block";
+        document.getElementById("mobileMenu").style.display = "none";
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <div id="mobileMenu" style="display: none">
         <div>
-          <a>
-            <img src="assets/HMB.png" class="Hamburger" onclick="showMobileMenu()">
-          </a>
+          <img
+            src="assets/close.png"
+            class="closeIcon"
+            onclick="hideMobileMenu()"
+          />
         </div>
-        <div class="Links">
-          <div>
-            <a href="#Portfolio">Portfolio</a>
-          </div>
-          <div>
-            <a href="#Education">Education</a>
-          </div>
-          <div>
-            <a href="#Resume">Resume</a>
-          </div>
+        <div>
+          <a href="#Portfolio" onclick="hideMobileMenu()">Portfolio</a>
+        </div>
+        <div>
+          <a href="#Education" onclick="hideMobileMenu()">Education</a>
+        </div>
+        <div>
+          <a href="#Resume" onclick="hideMobileMenu()">Resume</a>
         </div>
       </div>
-      <div class="Badge">
-        <div class="BadgeInner">
-          <p>Ahmed Khan</p>
-          <p>Software Engineer</p>
-        </div>
-        <div class="BadgeIcons">
+      <div id="page">
+        <div class="nav">
           <div>
-            <a href="https://github.com/Tier1Security" target="_blank" rel="noreferrer">
-              <img src="assets/GitHub.png" alt="GitHub">
+            <a>
+              <img
+                src="assets/HMB.png"
+                class="Hamburger"
+                onclick="showMobileMenu()"
+              />
             </a>
           </div>
-          <div>
-            <a href="https://www.linkedin.com/in/ahmedbk" target="_blank" rel="noreferrer">
-              <img src="assets/LinkedIn.png" alt="LinkedIn">
+          <div class="Links">
+            <div>
+              <a href="#Portfolio">Portfolio</a>
+            </div>
+            <div>
+              <a href="#Education">Education</a>
+            </div>
+            <div>
+              <a href="#Resume">Resume</a>
+            </div>
+          </div>
+        </div>
+        <div class="Badge">
+          <div class="BadgeInner">
+            <p>Ahmed Khan</p>
+            <p>Software Engineer</p>
+          </div>
+          <div class="BadgeIcons">
+            <div>
+              <a
+                href="https://github.com/Tier1Security"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="assets/GitHub.png" alt="GitHub" />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.linkedin.com/in/ahmedbk"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="assets/LinkedIn.png" alt="LinkedIn" />
+              </a>
+            </div>
+            <div>
+              <a href="mailto:ahmadpsn95@gmail.com">
+                <img src="assets/email.png" alt="Email" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="achorTitle">
+          <h1 id="Portfolio">Portfolio</h1>
+        </div>
+        <div class="previousWorkContainer">
+          <div class="box">
+            <a
+              href="https://t1-security.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="assets/placeholder.png"
+                class="portfolioImage"
+                alt="Portfolio Item"
+              />
             </a>
           </div>
-          <div>
-            <a href="mailto:ahmadpsn95@gmail.com">
-              <img src="assets/email.png" alt="Email">
+          <div class="box">
+            <p>
+              Tier 1 Security is an intuitive dashboard solution designed to
+              provide real-time visibility into security events collected by
+              Watchtower. With a clean and user-friendly interface, it allows
+              users to monitor and analyze security logs, including login
+              attempts, suspicious activities, and blocked threats.
+            </p>
+          </div>
+          <div class="box">
+            <a
+              href="https://github.com/Tier1Security/Watchtower-Agent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="assets/watchtower.png"
+                class="portfolioImage"
+                alt="Watchtower Agent Repository"
+              />
             </a>
           </div>
+          <div class="box">
+            <p>
+              Watchtower is a powerful .NET-based security agent designed to
+              safeguard systems by collecting critical security events and
+              actively defending against threats.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="achorTitle">
-        <h1 id="Portfolio">Portfolio</h1>
-      </div>
-      <div class="previousWorkContainer">
-        <div class="box">
-          <a href="https://t1-security.com" target="_blank" rel="noopener noreferrer">
-            <img src="assets/placeholder.png" class="portfolioImage" alt="Portfolio Item">
-          </a>
+        <div class="achorTitle">
+          <h1 id="Experience">Experience</h1>
         </div>
-        <div class="box">
-          <p>
-            Tier 1 Security is an intuitive dashboard solution designed to provide real-time visibility into security events collected by Watchtower. 
-            With a clean and user-friendly interface, it allows users to monitor and analyze security logs, including login attempts, suspicious 
-            activities, and blocked threats.
-          </p>
-        </div>
-        <div class="box">
-          <a href="https://github.com/Tier1Security/Watchtower-Agent" target="_blank" rel="noopener noreferrer">
-            <img src="assets/watchtower.png" class="portfolioImage" alt="Watchtower Agent Repository">
-          </a>
-        </div>
-        <div class="box">
-          <p>
-            Watchtower is a powerful .NET-based security agent designed to safeguard systems by collecting critical security events and actively defending against threats.
-          </p>
-        </div>
-      </div>
-      <div class="achorTitle">
-        <h1 id="Experience">Experience</h1>
-      </div>
-      <div class="Education_Container">
-        <div class="Degree">
-          <p>Founder</p>
-        </div>
-        <div class="Instituion">
-          <p>Tier 1 Security</p>
-        </div>
-        <div>2024</div>
-      </div>
-      <div class="Education_Container">
-        <div class="Degree">
-          <p>Software Consultant</p>
-        </div>
-        <div class="Instituion">
-        </div>
-        <div>2021-present</div>
-      </div>
-      <div class="Education_Container">
-        <div class="Degree">
-          <p>Top 5% Hacker</p>
-        </div>
-        <div class="Instituion">
-          <p>HackTheBox</p>
-        </div>
-      </div>
-      <div class="Education_Container">
-        <div class="Degree">
-          <p>IoT Consultant</p>
-        </div>
-        <div class="Instituion">
-          <p>Trakker</p>
-        </div>
-        <div>2019-2020</div>
-      </div>
-      <div class="Education_Container">
-        <div class="Degree">
-          <p>Intern</p>
-        </div>
-        <div class="Instituion">
-          <p>SAP</p>
-        </div>
-        <div>2018</div>
-      </div>
-      <div class="Education_Container">
-        <div class="Degree">
-          <p>Systems Administrator</p>
-        </div>
-        <div class="Instituion">
-          <p>The Home Team</p>
-        </div>
-        <div>2017-2018</div>
-      </div>
-      <div class="achorTitle">
-        <h1 id="Education">Education</h1>
-      </div>
-      <div class="Education_Container">
-        <div class="UniContainer">
+        <div class="Education_Container">
           <div class="Degree">
-            <p>Masters in Computer Science</p>
+            <p>Founder</p>
           </div>
           <div class="Instituion">
-            <p>University of Birmingham</p>
+            <p>Tier 1 Security</p>
           </div>
-          <div>2020-2021</div>
+          <div>2024</div>
         </div>
-        <div class="UniContainer">
+        <div class="Education_Container">
           <div class="Degree">
-            <p>Bachelors in Business Administration</p>
+            <p>Software Consultant</p>
+          </div>
+          <div class="Instituion"></div>
+          <div>2021-present</div>
+        </div>
+        <div class="Education_Container">
+          <div class="Degree">
+            <p>Top 5% Hacker</p>
           </div>
           <div class="Instituion">
-            <p>Heriot Watt University</p>
+            <p>HackTheBox</p>
           </div>
-          <div>2017-2020</div>
         </div>
-      </div>
-      <div class="achorTitle">
-        <h1 id="Resume">Resume</h1>
-      </div>
-      <div>
-        <div class="Resume_Download">
-          <a>Please find my Resume here:</a>
-          <a href="https://www.dropbox.com/scl/fi/472xghskufg12z65zc0oi/Ahmed_Khan_Resume_.docx?rlkey=1z79dml5xwfe0b8or9p83gih8&st=mppdpdmf&dl=0">
-            <img src="assets/external.png" alt="Resume Download">
-          </a>
+        <div class="Education_Container">
+          <div class="Degree">
+            <p>IoT Consultant</p>
+          </div>
+          <div class="Instituion">
+            <p>Trakker</p>
+          </div>
+          <div>2019-2020</div>
         </div>
-      </div>
-      <div class="FooterHolder">
-        <div class="Footer"></div>
-        <div class="Footer">
-          <div>
-            <a href="#">Scroll to Top</a>
+        <div class="Education_Container">
+          <div class="Degree">
+            <p>Intern</p>
+          </div>
+          <div class="Instituion">
+            <p>SAP</p>
+          </div>
+          <div>2018</div>
+        </div>
+        <div class="Education_Container">
+          <div class="Degree">
+            <p>Systems Administrator</p>
+          </div>
+          <div class="Instituion">
+            <p>The Home Team</p>
+          </div>
+          <div>2017-2018</div>
+        </div>
+        <div class="achorTitle">
+          <h1 id="Education">Education</h1>
+        </div>
+        <div class="Education_Container">
+          <div class="UniContainer">
+            <div class="Degree">
+              <p>Masters in Computer Science</p>
+            </div>
+            <div class="Instituion">
+              <p>University of Birmingham</p>
+            </div>
+            <div>2020-2021</div>
+          </div>
+          <div class="UniContainer">
+            <div class="Degree">
+              <p>Bachelors in Business Administration</p>
+            </div>
+            <div class="Instituion">
+              <p>Heriot Watt University</p>
+            </div>
+            <div>2017-2020</div>
+          </div>
+        </div>
+        <div class="achorTitle">
+          <h1 id="Resume">Resume</h1>
+        </div>
+        <div>
+          <div class="Resume_Download">
+            <a>Please find my Resume here:</a>
+            <a
+              href="https://www.dropbox.com/scl/fi/472xghskufg12z65zc0oi/Ahmed_Khan_Resume_.docx?rlkey=1z79dml5xwfe0b8or9p83gih8&st=mppdpdmf&dl=0"
+            >
+              <img src="assets/external.png" alt="Resume Download" />
+            </a>
+          </div>
+        </div>
+        <div class="FooterHolder">
+          <div class="Footer"></div>
+          <div class="Footer">
+            <div>
+              <a href="#">Scroll to Top</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
