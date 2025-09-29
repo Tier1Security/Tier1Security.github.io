@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; object-src 'none'; frame-src 'none';"
+    />
+
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Blog - Ahmed Khan</title>
+    <script>
+      function showMobileMenu() {
+        document.getElementById("page").style.display = "none";
+        document.getElementById("mobileMenu").style.display = "flex";
+      }
+
+      function hideMobileMenu() {
+        document.getElementById("page").style.display = "block";
+        document.getElementById("mobileMenu").style.display = "none";
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Blog-specific styles */
+      .Badge {
+        height: 25vh !important; /* Reduced from default 45vh */
+        margin: 0.5rem !important; /* Reduced margin */
+      }
+      
+      .blog-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1rem 2rem 2rem 2rem; /* Reduced top padding */
+      }
+      
+      .blog-post {
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        padding: 1rem;
+        transition: 0.3s;
+      }
+      
+      .blog-post:hover {
+        background-color: #111;
+      }
+      
+      .blog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 1rem 0;
+        border-bottom: 1px solid #333;
+      }
+      
+      .blog-headline {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        margin: 0;
+        flex-grow: 1;
+        transition: 0.2s;
+      }
+      
+      .blog-header:hover .blog-headline {
+        color: #ddd;
+      }
+      
+      .blog-date {
+        color: #888;
+        font-size: 0.9rem;
+        margin-left: 1rem;
+      }
+      
+      .blog-content {
+        display: none;
+        padding: 1rem 0;
+        line-height: 1.6;
+        color: #ddd;
+        animation: fadeIn 0.3s ease-in;
+      }
+      
+      .blog-content.show {
+        display: block;
+      }
+      
+      .expand-icon {
+        color: #888;
+        font-size: 1.2rem;
+        transition: 0.3s;
+      }
+      
+      .expand-icon.rotated {
+        transform: rotate(180deg);
+      }
+      
+      .loading {
+        color: #888;
+        text-align: center;
+        padding: 1rem;
+        font-style: italic;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      /* Mobile responsive */
+      @media screen and (max-width: 600px) {
+        .blog-container {
+          padding: 1rem;
+        }
+        
+        .blog-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+        
+        .blog-date {
+          margin-left: 0;
+        }
+        
+        .blog-headline {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="mobileMenu" style="display: none">
+        <div>
+          <img
+            src="assets/close.png"
+            class="closeIcon"
+            onclick="hideMobileMenu()"
+          />
+        </div>
+        <div>
+          <a href="index.html" onclick="hideMobileMenu()">Home</a>
+        </div>
+        <div>
+          <a href="index.html#Projects" onclick="hideMobileMenu()">Projects</a>
+        </div>
+        <div>
+          <a href="index.html#Education" onclick="hideMobileMenu()">Education</a>
+        </div>
+        <div>
+          <a href="index.html#Experience" onclick="hideMobileMenu()">Experience</a>
+        </div>
+        <div>
+          <a href="index.html#Resume" onclick="hideMobileMenu()">Resume</a>
+        </div>
+        <div>
+          <a href="blog.html" onclick="hideMobileMenu()">Blog</a>
+        </div>
+      </div>
+      <div id="page">
+        <div class="nav">
+          <div>
+            <a>
+              <img
+                src="assets/HMB.png"
+                class="Hamburger"
+                onclick="showMobileMenu()"
+              />
+            </a>
+          </div>
+          <div class="Links">
+            <div>
+              <a href="index.html">Home</a>
+            </div>
+            <div>
+              <a href="index.html#Projects">Projects</a>
+            </div>
+            <div>
+              <a href="index.html#Experience">Experience</a>
+            </div>
+            <div>
+              <a href="index.html#Education">Education</a>
+            </div>
+            <div>
+              <a href="index.html#Resume">Resume</a>
+            </div>
+            <div>
+              <a href="blog.html" style="background-color: white; color: black; border-radius: 10px; padding: 0.2rem;">Blog</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="Badge">
+          <div class="BadgeInner">
+            <p>Blog</p>
+            <p>Insights & Analysis</p>
+          </div>
+        </div>
+
+        <div class="blog-container">
+          <div id="blog-posts">
+            <div class="loading">Loading blog posts...</div>
+          </div>
+        </div>
+
+        <div class="FooterHolder">
+          <div class="Footer"></div>
+          <div class="Footer">
+            <div>
+              <a href="#" onclick="scrollToTop()">Scroll to Top</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Blog post data - this is where you'll add your posts
+      const blogPosts = [
+        {
+          id: 1,
+          headline: "Understanding OSINT: A Comprehensive Guide",
+          date: "2025-09-28",
+          content: null, // Will be loaded lazily
+          preview: "An in-depth look at Open Source Intelligence gathering techniques and tools used in modern cybersecurity analysis.",
+          fullContent: `
+            <h3>Introduction to OSINT</h3>
+            <p>Open Source Intelligence (OSINT) is the practice of collecting and analyzing publicly available information to produce actionable intelligence. In today's digital age, OSINT has become an invaluable tool for cybersecurity professionals, investigators, and researchers.</p>
+            
+            <h3>Key OSINT Sources</h3>
+            <ul>
+              <li><strong>Social Media Platforms:</strong> Twitter, LinkedIn, Facebook, Instagram</li>
+              <li><strong>Search Engines:</strong> Google, Bing, specialized search engines</li>
+              <li><strong>Public Records:</strong> Government databases, court records, business registrations</li>
+              <li><strong>Technical Resources:</strong> DNS records, WHOIS data, certificate transparency logs</li>
+            </ul>
+            
+            <h3>Best Practices</h3>
+            <p>When conducting OSINT investigations, it's crucial to:</p>
+            <ol>
+              <li>Maintain operational security (OPSEC)</li>
+              <li>Verify information from multiple sources</li>
+              <li>Document your methodology</li>
+              <li>Respect privacy and legal boundaries</li>
+            </ol>
+            
+            <p>OSINT continues to evolve with new tools and techniques emerging regularly. Staying updated with the latest developments is essential for effective intelligence gathering.</p>
+          `
+        },
+        {
+          id: 2,
+          headline: "Cybersecurity Threat Landscape 2025",
+          date: "2025-09-25",
+          content: null,
+          preview: "Analyzing the emerging cybersecurity threats and defense strategies shaping the digital landscape in 2025.",
+          fullContent: `
+            <h3>Current Threat Landscape</h3>
+            <p>The cybersecurity threat landscape in 2025 continues to evolve at an unprecedented pace. Organizations face increasingly sophisticated attacks that leverage artificial intelligence, social engineering, and zero-day exploits.</p>
+            
+            <h3>Emerging Threats</h3>
+            <ul>
+              <li><strong>AI-Powered Attacks:</strong> Machine learning algorithms used to automate and enhance attack vectors</li>
+              <li><strong>Supply Chain Compromises:</strong> Targeting third-party vendors to gain access to primary targets</li>
+              <li><strong>Cloud Security Misconfigurations:</strong> Exploiting improperly configured cloud services</li>
+              <li><strong>IoT Vulnerabilities:</strong> Leveraging insecure Internet of Things devices</li>
+            </ul>
+            
+            <h3>Defense Strategies</h3>
+            <p>To combat these evolving threats, organizations must adopt:</p>
+            <ol>
+              <li>Zero-trust security architecture</li>
+              <li>Continuous monitoring and threat hunting</li>
+              <li>Regular security awareness training</li>
+              <li>Incident response planning and testing</li>
+            </ol>
+            
+            <p>The key to effective cybersecurity lies in proactive defense, continuous learning, and adaptive security measures that can evolve with the threat landscape.</p>
+          `
+        },
+        {
+          id: 3,
+          headline: "Building Effective Security Monitoring Systems",
+          date: "2025-09-20",
+          content: null,
+          preview: "A technical deep-dive into creating robust security monitoring infrastructure for modern enterprise environments.",
+          fullContent: `
+            <h3>Foundation of Security Monitoring</h3>
+            <p>Effective security monitoring requires a comprehensive approach that combines the right tools, processes, and people. The goal is to detect, analyze, and respond to security incidents as quickly as possible.</p>
+            
+            <h3>Key Components</h3>
+            <ul>
+              <li><strong>SIEM Systems:</strong> Centralized log management and correlation</li>
+              <li><strong>Network Monitoring:</strong> Traffic analysis and anomaly detection</li>
+              <li><strong>Endpoint Detection:</strong> Host-based monitoring and response</li>
+              <li><strong>Threat Intelligence:</strong> External threat data integration</li>
+            </ul>
+            
+            <h3>Implementation Best Practices</h3>
+            <ol>
+              <li>Define clear monitoring objectives and KPIs</li>
+              <li>Implement proper log collection and retention policies</li>
+              <li>Create actionable alerting rules with minimal false positives</li>
+              <li>Establish incident response workflows</li>
+              <li>Regularly test and tune monitoring systems</li>
+            </ol>
+            
+            <h3>Challenges and Solutions</h3>
+            <p>Common challenges include alert fatigue, resource constraints, and skill gaps. Addressing these requires automation, prioritization, and continuous team development.</p>
+          `
+        },
+        {
+          id: 4,
+          headline: "Advanced Threat Detection Dashboard",
+          date: "2025-09-27",
+          content: null,
+          preview: "Building a comprehensive security dashboard to visualize threats and monitor system health in real-time.",
+          fullContent: `
+            <h3>Dashboard Overview</h3>
+            <p>In today's threat landscape, having a centralized view of your security posture is crucial. This dashboard provides real-time insights into potential threats and system vulnerabilities.</p>
+            
+            <img src="assets/blog/security-dashboard.png" alt="Security Dashboard Overview" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1); transition: 0.3s;" />
+            
+            <h3>Key Features</h3>
+            <ul>
+              <li><strong>Real-time Threat Feed:</strong> Live updates on emerging threats</li>
+              <li><strong>Network Topology Mapping:</strong> Visual representation of network infrastructure</li>
+              <li><strong>Alert Correlation:</strong> Intelligent grouping of related security events</li>
+              <li><strong>Compliance Monitoring:</strong> Automated tracking of regulatory requirements</li>
+            </ul>
+            
+            <h3>Implementation Architecture</h3>
+            <p>The dashboard leverages multiple data sources and uses machine learning algorithms to identify patterns:</p>
+            
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+              <img src="assets/blog/architecture-diagram.png" alt="System Architecture" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
+              <img src="assets/blog/data-flow.png" alt="Data Flow Diagram" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
+            </div>
+            
+            <h3>Performance Metrics</h3>
+            <p>After implementation, we observed significant improvements in threat detection speed and analyst efficiency. The dashboard reduced mean time to detection by 60% and false positive rates by 40%.</p>
+            
+            <p><em>Note: Replace the placeholder images in assets/blog/ with your actual dashboard screenshots for a complete implementation.</em></p>
+          `
+        },
+        {
+          id: 5,
+          headline: "Network Security Analysis: Port Scanning Deep Dive",
+          date: "2025-09-26",
+          content: null,
+          preview: "A detailed analysis of network reconnaissance techniques and how to detect and defend against port scanning attacks.",
+          fullContent: `
+            <h3>Understanding Port Scanning</h3>
+            <p>Port scanning is one of the most fundamental reconnaissance techniques used by both security professionals and attackers. Understanding these techniques is crucial for building effective defenses.</p>
+            
+            <img src="assets/blog/network-scan-example.png" alt="Network Scanning Results" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1);" />
+            
+            <h3>Common Scanning Techniques</h3>
+            <ol>
+              <li><strong>TCP Connect Scan:</strong> Establishes full connections</li>
+              <li><strong>SYN Stealth Scan:</strong> Half-open connections to avoid detection</li>
+              <li><strong>UDP Scan:</strong> Discovers open UDP services</li>
+              <li><strong>Idle Scan:</strong> Uses zombie hosts for anonymity</li>
+            </ol>
+            
+            <h3>Detection and Analysis</h3>
+            <p>Modern security systems can identify scanning patterns through various indicators. Here's what typical scan traffic looks like in our monitoring system:</p>
+            
+            <img src="assets/blog/scan-detection-graph.png" alt="Port Scan Detection Graph" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1);" />
+            
+            <h3>Defense Strategies</h3>
+            <div style="background-color: #111; padding: 1rem; border-radius: 10px; margin: 1.5rem 0; border-left: 4px solid #fff;">
+              <h4>Recommended Countermeasures:</h4>
+              <ul>
+                <li>Deploy intrusion detection systems (IDS)</li>
+                <li>Implement rate limiting and connection throttling</li>
+                <li>Use port knocking for sensitive services</li>
+                <li>Regular vulnerability assessments</li>
+                <li>Network segmentation and micro-segmentation</li>
+              </ul>
+            </div>
+            
+            <h3>Real-World Case Study</h3>
+            <p>During a recent penetration test, we discovered several interesting patterns in how modern firewalls respond to different scanning techniques:</p>
+            
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+              <img src="assets/blog/firewall-response.png" alt="Firewall Response Analysis" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
+              <img src="assets/blog/scan-timeline.png" alt="Scanning Timeline" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
+            </div>
+            
+            <p>The key takeaway is that layered defense combined with intelligent monitoring provides the best protection against reconnaissance activities.</p>
+            
+            <p><em>Note: All images shown are examples. Replace with your actual network analysis screenshots and diagrams.</em></p>
+          `
+        }
+      ];
+
+      // Lazy loading and blog functionality
+      let loadedPosts = new Set();
+
+      function loadBlogContent(postId) {
+        const post = blogPosts.find(p => p.id === postId);
+        if (post && !loadedPosts.has(postId)) {
+          post.content = post.fullContent;
+          loadedPosts.add(postId);
+        }
+      }
+
+      function togglePost(postId) {
+        const contentDiv = document.getElementById(`content-${postId}`);
+        const icon = document.getElementById(`icon-${postId}`);
+        
+        if (contentDiv.classList.contains('show')) {
+          // Hide content
+          contentDiv.classList.remove('show');
+          icon.classList.remove('rotated');
+        } else {
+          // Load content if not loaded yet
+          if (!loadedPosts.has(postId)) {
+            loadBlogContent(postId);
+            const post = blogPosts.find(p => p.id === postId);
+            contentDiv.innerHTML = post.content;
+          }
+          
+          // Show content
+          contentDiv.classList.add('show');
+          icon.classList.add('rotated');
+        }
+      }
+
+      function renderBlogPosts() {
+        const container = document.getElementById('blog-posts');
+        container.innerHTML = '';
+
+        blogPosts.forEach(post => {
+          const postDiv = document.createElement('div');
+          postDiv.className = 'blog-post';
+          
+          postDiv.innerHTML = `
+            <div class="blog-header" onclick="togglePost(${post.id})">
+              <h2 class="blog-headline">${post.headline}</h2>
+              <span class="blog-date">${post.date}</span>
+              <span id="icon-${post.id}" class="expand-icon">▼</span>
+            </div>
+            <div id="content-${post.id}" class="blog-content">
+              <p style="font-style: italic; margin-bottom: 1rem;">${post.preview}</p>
+            </div>
+          `;
+          
+          container.appendChild(postDiv);
+        });
+      }
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      // Initialize blog when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, initializing blog...');
+        console.log('Blog posts:', blogPosts.length);
+        renderBlogPosts();
+      });
+
+      // Fallback initialization
+      window.addEventListener('load', function() {
+        const container = document.getElementById('blog-posts');
+        if (container && container.innerHTML.includes('Loading blog posts...')) {
+          console.log('Fallback initialization triggered');
+          renderBlogPosts();
+        }
+      });
+    </script>
+  </body>
+</html>
