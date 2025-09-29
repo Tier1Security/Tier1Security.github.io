@@ -3,10 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Blog - Ahmed Khan | OSINT & Cybersecurity Insights</title>
+    <meta name="description" content="Expert insights on OSINT, cybersecurity threats, and security monitoring. Read Ahmed Khan's latest analysis on threat detection, network security, and defensive strategies." />
+    <meta name="keywords" content="OSINT, cybersecurity, threat detection, security monitoring, network security, Ahmed Khan, security analysis, threat intelligence" />
+    <meta name="author" content="Ahmed Khan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tier1security.github.io/blog.html" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Blog - Ahmed Khan | OSINT & Cybersecurity Insights" />
+    <meta property="og:description" content="Expert insights on OSINT, cybersecurity threats, and security monitoring from experienced OSINT Analyst Ahmed Khan." />
+    <meta property="og:image" content="https://tier1security.github.io/assets/placeholder.png" />
+    <meta property="og:url" content="https://tier1security.github.io/blog.html" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:site_name" content="Ahmed Khan - OSINT Analyst" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog - Ahmed Khan | OSINT & Cybersecurity Insights" />
+    <meta name="twitter:description" content="Expert insights on OSINT, cybersecurity threats, and security monitoring." />
+    <meta name="twitter:image" content="https://tier1security.github.io/assets/placeholder.png" />
+    
+    <!-- Performance Optimizations -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; object-src 'none'; frame-src 'none';"
     />
+    
+    <!-- Resource Hints for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="preload" href="assets/favicon.png" as="image" />
 
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,8 +44,15 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
+      media="print" 
+      onload="this.media='all'"
     />
-    <title>Blog - Ahmed Khan</title>
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <script>
       function showMobileMenu() {
         document.getElementById("page").style.display = "none";
@@ -27,112 +64,139 @@
         document.getElementById("mobileMenu").style.display = "none";
       }
     </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Ahmed Khan's Cybersecurity Blog",
+      "description": "Expert insights on OSINT, cybersecurity threats, and security monitoring",
+      "url": "https://tier1security.github.io/blog.html",
+      "author": {
+        "@type": "Person",
+        "name": "Ahmed Khan",
+        "jobTitle": "OSINT Analyst",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Verto Solutions Group"
+        },
+        "sameAs": [
+          "https://github.com/Tier1Security",
+          "https://www.linkedin.com/in/ahmedbk"
+        ]
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Understanding OSINT: A Comprehensive Guide",
+          "datePublished": "2025-09-28",
+          "author": {
+            "@type": "Person",
+            "name": "Ahmed Khan"
+          },
+          "description": "An in-depth look at Open Source Intelligence gathering techniques and tools used in modern cybersecurity analysis."
+        },
+        {
+          "@type": "BlogPosting", 
+          "headline": "Advanced Threat Detection Dashboard",
+          "datePublished": "2025-09-27",
+          "author": {
+            "@type": "Person",
+            "name": "Ahmed Khan"
+          },
+          "description": "Building a comprehensive security dashboard to visualize threats and monitor system health in real-time."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Network Security Analysis: Port Scanning Deep Dive",
+          "datePublished": "2025-09-26",
+          "author": {
+            "@type": "Person",
+            "name": "Ahmed Khan"
+          },
+          "description": "A detailed analysis of network reconnaissance techniques and how to detect and defend against port scanning attacks."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Cybersecurity Threat Landscape 2025",
+          "datePublished": "2025-09-25",
+          "author": {
+            "@type": "Person",
+            "name": "Ahmed Khan"
+          },
+          "description": "Analyzing the emerging cybersecurity threats and defense strategies shaping the digital landscape in 2025."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Building Effective Security Monitoring Systems",
+          "datePublished": "2025-09-20",
+          "author": {
+            "@type": "Person",
+            "name": "Ahmed Khan"
+          },
+          "description": "A technical deep-dive into creating robust security monitoring infrastructure for modern enterprise environments."
+        }
+      ]
+    }
+    </script>
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Blog-specific styles */
-      .Badge {
-        height: 25vh !important; /* Reduced from default 45vh */
-        margin: 0.5rem !important; /* Reduced margin */
-      }
+      /* Critical CSS - Above the fold styles */
+      html, body { font-family: "Archivo", sans-serif; width: 100%; scroll-behavior: smooth; background-color: black; color: white; margin: 0; padding: 0; }
+      .nav { display: flex; justify-content: space-between; align-items: center; height: 55px; margin: 1rem; }
+      .Links { display: flex; justify-content: center; align-items: center; width: 100%; }
+      .Links div { padding: 0 1rem; }
+      .Links a { text-decoration: none; color: white; font-size: 18px; padding: 0.2rem; border-radius: 10px; transition: 0.2s; }
+      .Badge { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 25vh; margin: 0.5rem; }
+      .BadgeInner { text-align: center; width: 200px; }
+      .BadgeInner :first-child { font-size: 32px; }
       
-      .blog-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 1rem 2rem 2rem 2rem; /* Reduced top padding */
-      }
+      /* Blog-specific optimized styles */
+      .blog-container { max-width: 800px; margin: 0 auto; padding: 1rem 2rem 2rem 2rem; }
+      .blog-post { margin-bottom: 2rem; border-radius: 10px; padding: 1rem; transition: 0.3s; }
+      .blog-post:hover { background-color: #111; }
+      .blog-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 1rem 0; border-bottom: 1px solid #333; }
+      .blog-headline { font-size: 1.5rem; font-weight: bold; color: white; margin: 0; flex-grow: 1; transition: 0.2s; }
+      .blog-date { color: #888; font-size: 0.9rem; margin-left: 1rem; }
+      .blog-content { display: none; padding: 1rem 0; line-height: 1.6; color: #ddd; }
+      .blog-content.show { display: block; animation: fadeIn 0.3s ease-in; }
+      .expand-icon { color: #888; font-size: 1.2rem; transition: 0.3s; }
+      .expand-icon.rotated { transform: rotate(180deg); }
+      .loading { color: #888; text-align: center; padding: 1rem; font-style: italic; }
       
-      .blog-post {
-        margin-bottom: 2rem;
-        border-radius: 10px;
-        padding: 1rem;
-        transition: 0.3s;
-      }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
       
-      .blog-post:hover {
-        background-color: #111;
-      }
-      
-      .blog-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        padding: 1rem 0;
-        border-bottom: 1px solid #333;
-      }
-      
-      .blog-headline {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-        margin: 0;
-        flex-grow: 1;
-        transition: 0.2s;
-      }
-      
-      .blog-header:hover .blog-headline {
-        color: #ddd;
-      }
-      
-      .blog-date {
-        color: #888;
-        font-size: 0.9rem;
-        margin-left: 1rem;
-      }
-      
-      .blog-content {
-        display: none;
-        padding: 1rem 0;
-        line-height: 1.6;
-        color: #ddd;
-        animation: fadeIn 0.3s ease-in;
-      }
-      
-      .blog-content.show {
-        display: block;
-      }
-      
-      .expand-icon {
-        color: #888;
-        font-size: 1.2rem;
-        transition: 0.3s;
-      }
-      
-      .expand-icon.rotated {
-        transform: rotate(180deg);
-      }
-      
-      .loading {
-        color: #888;
-        text-align: center;
-        padding: 1rem;
-        font-style: italic;
-      }
-      
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      
-      /* Mobile responsive */
+      /* Mobile responsive optimizations */
       @media screen and (max-width: 600px) {
-        .blog-container {
-          padding: 1rem;
-        }
-        
-        .blog-header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0.5rem;
-        }
-        
-        .blog-date {
-          margin-left: 0;
-        }
-        
-        .blog-headline {
-          font-size: 1.2rem;
-        }
+        .Links { display: none; }
+        .Hamburger { display: block; height: 40px; width: auto; }
+        .blog-container { padding: 1rem; }
+        .blog-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+        .blog-date { margin-left: 0; }
+        .blog-headline { font-size: 1.2rem; }
+      }
+      
+      @media screen and (min-width: 600px) {
+        .Hamburger { display: none; }
+      }
+      
+      /* Lazy loading optimization for images */
+      .blog-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: opacity 0.3s;
+        background-color: #222;
+        min-height: 200px;
+      }
+      
+      .blog-content img[loading="lazy"] {
+        opacity: 0;
+      }
+      
+      .blog-content img.loaded {
+        opacity: 1;
       }
     </style>
   </head>
@@ -326,7 +390,7 @@
             <h3>Dashboard Overview</h3>
             <p>In today's threat landscape, having a centralized view of your security posture is crucial. This dashboard provides real-time insights into potential threats and system vulnerabilities.</p>
             
-            <img src="assets/blog/security-dashboard.png" alt="Security Dashboard Overview" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1); transition: 0.3s;" />
+            <img src="assets/blog/security-dashboard.png" alt="Security Dashboard Overview" loading="lazy" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1); transition: 0.3s;" />
             
             <h3>Key Features</h3>
             <ul>
@@ -340,8 +404,8 @@
             <p>The dashboard leverages multiple data sources and uses machine learning algorithms to identify patterns:</p>
             
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
-              <img src="assets/blog/architecture-diagram.png" alt="System Architecture" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
-              <img src="assets/blog/data-flow.png" alt="Data Flow Diagram" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
+              <img src="assets/blog/architecture-diagram.png" alt="System Architecture" loading="lazy" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
+              <img src="assets/blog/data-flow.png" alt="Data Flow Diagram" loading="lazy" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
             </div>
             
             <h3>Performance Metrics</h3>
@@ -360,7 +424,7 @@
             <h3>Understanding Port Scanning</h3>
             <p>Port scanning is one of the most fundamental reconnaissance techniques used by both security professionals and attackers. Understanding these techniques is crucial for building effective defenses.</p>
             
-            <img src="assets/blog/network-scan-example.png" alt="Network Scanning Results" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1);" />
+            <img src="assets/blog/network-scan-example.png" alt="Network Scanning Results" loading="lazy" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1);" />
             
             <h3>Common Scanning Techniques</h3>
             <ol>
@@ -373,7 +437,7 @@
             <h3>Detection and Analysis</h3>
             <p>Modern security systems can identify scanning patterns through various indicators. Here's what typical scan traffic looks like in our monitoring system:</p>
             
-            <img src="assets/blog/scan-detection-graph.png" alt="Port Scan Detection Graph" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1);" />
+            <img src="assets/blog/scan-detection-graph.png" alt="Port Scan Detection Graph" loading="lazy" style="max-width: 100%; border-radius: 10px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(255,255,255,0.1);" />
             
             <h3>Defense Strategies</h3>
             <div style="background-color: #111; padding: 1rem; border-radius: 10px; margin: 1.5rem 0; border-left: 4px solid #fff;">
@@ -391,8 +455,8 @@
             <p>During a recent penetration test, we discovered several interesting patterns in how modern firewalls respond to different scanning techniques:</p>
             
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
-              <img src="assets/blog/firewall-response.png" alt="Firewall Response Analysis" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
-              <img src="assets/blog/scan-timeline.png" alt="Scanning Timeline" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
+              <img src="assets/blog/firewall-response.png" alt="Firewall Response Analysis" loading="lazy" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
+              <img src="assets/blog/scan-timeline.png" alt="Scanning Timeline" loading="lazy" style="max-width: 48%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255,255,255,0.1);" />
             </div>
             
             <p>The key takeaway is that layered defense combined with intelligent monitoring provides the best protection against reconnaissance activities.</p>
@@ -402,14 +466,39 @@
         }
       ];
 
-      // Lazy loading and blog functionality
+      // Lazy loading and blog functionality - Optimized for performance
       let loadedPosts = new Set();
+      let observer;
+
+      // Initialize Intersection Observer for lazy loading images
+      function initImageLazyLoading() {
+        if ('IntersectionObserver' in window) {
+          observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+              }
+            });
+          });
+        }
+      }
 
       function loadBlogContent(postId) {
         const post = blogPosts.find(p => p.id === postId);
         if (post && !loadedPosts.has(postId)) {
           post.content = post.fullContent;
           loadedPosts.add(postId);
+          
+          // Setup lazy loading for images in the loaded content
+          requestAnimationFrame(() => {
+            const contentDiv = document.getElementById(`content-${postId}`);
+            if (contentDiv && observer) {
+              const images = contentDiv.querySelectorAll('img[loading="lazy"]');
+              images.forEach(img => observer.observe(img));
+            }
+          });
         }
       }
 
@@ -465,18 +554,32 @@
         });
       }
 
-      // Initialize blog when page loads
+      // Initialize blog when page loads - Performance optimized
       document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM loaded, initializing blog...');
         console.log('Blog posts:', blogPosts.length);
+        
+        // Initialize components
+        initImageLazyLoading();
         renderBlogPosts();
+        
+        // Preload critical resources
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(() => {
+            // Preload the first blog post content during idle time
+            if (blogPosts.length > 0) {
+              loadBlogContent(blogPosts[0].id);
+            }
+          });
+        }
       });
 
-      // Fallback initialization
+      // Fallback initialization - Performance optimized
       window.addEventListener('load', function() {
         const container = document.getElementById('blog-posts');
         if (container && container.innerHTML.includes('Loading blog posts...')) {
           console.log('Fallback initialization triggered');
+          initImageLazyLoading();
           renderBlogPosts();
         }
       });
